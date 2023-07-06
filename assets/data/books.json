@@ -1,38 +1,20 @@
 [
     {
-        "id": 1
-    },
-    {
-        "book_name": "War and Peace"
-    },
-    {
-        "author": "Tolstoy"
-    },
-    {
+        "id": 1,
+        "book_name": "War and Peace",
+        "author": "Tolstoy",
         "year": 1869
     },
     {
-        "id": 2
-    },
-    {
-        "book_name": "Anna Karanina"
-    },
-    {
-        "author": "Tolstoy"
-    },
-    {
+        "id": 2,
+        "book_name": "Anna Karanina",
+        "author": "Tolstoy",
         "year": 1878
     },
     {
-        "id": 3
-    },
-    {
-        "book_name": "The Decembrists"
-    },
-    {
-        "author": "Tolstoy"
-    },
-    {
+        "id": 3,
+        "book_name": "The Decembrists",
+        "author": "Tolstoy",
         "year": 1884
     }
 ]

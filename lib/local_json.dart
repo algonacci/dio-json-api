@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:dio_json_api/models/books_model.dart';
 import 'package:flutter/material.dart';
 
 class LocalJson extends StatefulWidget {
@@ -25,9 +26,17 @@ class _LocalJsonState extends State<LocalJson> {
   readBooksJson() async {
     String data = await DefaultAssetBundle.of(context)
         .loadString('assets/data/books.json');
+
     var jsonData = jsonDecode(data);
-    debugPrint(data);
-    debugPrint('================');
-    debugPrint(jsonData.toString());
+    List<Book> allBooks =
+        (jsonData as List).map((bookMap) => Book.fromJson(bookMap)).toList();
+
+    debugPrint(allBooks.length.toString());
+
+    debugPrint(allBooks[0].author);
+
+    // debugPrint(data);
+    // debugPrint('================');
+    // debugPrint(jsonData.toString());
   }
 }
