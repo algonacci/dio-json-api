@@ -15,7 +15,6 @@ class _LocalJsonState extends State<LocalJson> {
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     filledList = readBooksJson();
   }
@@ -71,7 +70,7 @@ class _LocalJsonState extends State<LocalJson> {
 
   Future<List<Book>> readBooksJson() async {
     try {
-      await Future.delayed(Duration(seconds: 3));
+      await Future.delayed(const Duration(seconds: 3));
       String data = await DefaultAssetBundle.of(context)
           .loadString('assets/data/books.json');
 

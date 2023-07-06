@@ -1,8 +1,9 @@
 import 'package:dio_json_api/local_json.dart';
+import 'package:dio_json_api/remote_api.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -10,7 +11,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       home: HomePage(),
     );
   }
@@ -23,7 +24,7 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
+        title: const Text(
           'JSON API',
         ),
       ),
@@ -35,12 +36,27 @@ class HomePage extends StatelessWidget {
               onPressed: () {
                 Navigator.of(context).push(
                   MaterialPageRoute(
-                    builder: (context) => LocalJson(),
+                    builder: (context) => const LocalJson(),
                   ),
                 );
               },
-              child: Text(
+              child: const Text(
                 'Local JSON',
+              ),
+            ),
+            const SizedBox(
+              height: 30,
+            ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) => const RemoteApi(),
+                  ),
+                );
+              },
+              child: const Text(
+                'Remote API',
               ),
             ),
           ],
