@@ -11,6 +11,15 @@ class LocalJson extends StatefulWidget {
 }
 
 class _LocalJsonState extends State<LocalJson> {
+  late Future<List<Book>> filledList;
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    filledList = readBooksJson();
+  }
+
   @override
   Widget build(BuildContext context) {
     // readBooksJson();
@@ -21,7 +30,15 @@ class _LocalJsonState extends State<LocalJson> {
         ),
       ),
       body: FutureBuilder<List<Book>>(
-        future: readBooksJson(),
+        future: filledList,
+        initialData: [
+          Book(
+            id: 1,
+            bookName: 'Coding for Cash',
+            author: 'Eric Julianto',
+            year: 2022,
+          ),
+        ],
         builder: (context, snapshot) {
           if (snapshot.hasData) {
             List<Book> bookList = snapshot.data!;
